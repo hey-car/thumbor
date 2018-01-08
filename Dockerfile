@@ -18,7 +18,7 @@ RUN pip install --upgrade pip
 RUN pip install setuptools
 RUN pip install thumbor
 
-# Mount the models
+# Mount the config folder
 VOLUME /config/
 
 EXPOSE 7000
