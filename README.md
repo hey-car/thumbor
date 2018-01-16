@@ -12,5 +12,5 @@ Checkout the config file at `config/thumbor.config`. For more info on the config
 In order to run locally, you can:
 
 ```
-docker run --rm -it -p 127.0.0.1:7000:7000 -v $(pwd)/config/:/config/ heycar/thumbor:0.1.0
+docker run --rm -it -p 127.0.0.1:7000:7000 -v $(pwd)/config/:/config/ heycar/thumbor:0.2.0
 ```
