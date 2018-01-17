@@ -12,5 +12,13 @@ Checkout the config file at `config/thumbor.config`. For more info on the config
 In order to run locally, you can:
 
 ```
-docker run --rm -it -p 127.0.0.1:7000:7000 -v $(pwd)/config/:/config/ heycar/thumbor:0.2.0
+make run
 ```
+
+Thumbor will be available at `127.0.0.1:7000`.
+
+## Contributing
+
+Remember to update the tag in the `Makefile`, use the same tag for git.
+
+Then, run: `make release`, which will `build` and `push` the new docker image to dockerhub.
