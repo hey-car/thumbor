@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER HeyCar Engineering <team-engineering@hey.car>
+MAINTAINER heycar Engineering <team-engineering@hey.car>
 
 # Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
