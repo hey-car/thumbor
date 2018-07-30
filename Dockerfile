@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install thumbor
 RUN pip install --upgrade pip
 RUN pip install setuptools
-RUN pip install thumbor==6.4.2
+RUN pip install thumbor==6.5.1
 
 # Mount the config folder
 VOLUME /config/

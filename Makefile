@@ -1,6 +1,6 @@
-CONFIG_PATH ?= `pwd`/config
-DOCKER_BIN ?= `which docker`
-TAG ?= "heycar/thumbor:0.2.2"
+CONFIG_PATH := `pwd`/config
+DOCKER_BIN := `which docker`
+TAG := "heycar/thumbor:0.2.3"
 
 .PHONY: build
 build:
