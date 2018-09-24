@@ -1,22 +1,18 @@
-FROM ubuntu:16.04
+FROM python:2-alpine3.6
 
 MAINTAINER heycar Engineering <team-engineering@hey.car>
 
-# Install dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libcurl4-openssl-dev libssl-dev curl \
-    python-dev python-pycurl python-pip python-numpy python-opencv \
-    webp libpng-dev libtiff-dev libjasper-dev libjpeg-dev \
-    libdc1394-22-dev libdc1394-22 libdc1394-utils \
-    gifsicle libgif-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Install alpine dependencies
+RUN apk update && apk upgrade && \
+    apk add --update --no-cache \
+    build-base curl curl-dev zlib-dev jpeg-dev openssl-dev
 
 # Install thumbor
-RUN pip install --upgrade pip
-RUN pip install setuptools
-RUN pip install thumbor==6.5.2
+RUN pip install --upgrade pip --no-cache-dir \
+    setuptools \
+    envtpl==0.5.3 \
+    thumbor==6.5.2
+RUN rm -rf /var/cache/apk/* &&  rm -rf /tmp/*
 
 # Mount the config folder
 VOLUME /config/
