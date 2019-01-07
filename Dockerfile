@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libcurl4-openssl-dev libssl-dev curl \
     python-dev python-pycurl python-pip python-numpy python-opencv \
-    webp libpng-dev libtiff-dev libjasper-dev libjpeg-turbo-progs \
+    webp libpng-dev libtiff-dev libjasper-dev libjpeg-dev \
     libdc1394-22-dev libdc1394-22 libdc1394-utils \
     gifsicle libgif-dev && \
     apt-get clean && \
@@ -16,8 +16,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install thumbor
 RUN pip install --upgrade pip
 RUN pip install setuptools
-RUN pip install Pillow==5.4.0
 RUN pip install thumbor==6.6.0
+
+# Lock Pillow because of https://github.com/thumbor/thumbor/issues/1102
+RUN pip install Pillow==5.0.0
 
 # Mount the config folder
 VOLUME /config/
