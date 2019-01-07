@@ -2,6 +2,8 @@ CONFIG_PATH := `pwd`/config
 DOCKER_BIN := `which docker`
 TAG := "heycar/thumbor:0.4.0"
 
+default: build
+
 .PHONY: build
 build:
 	$(DOCKER_BIN) build . -t $(TAG)
