@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install thumbor
 RUN pip install --upgrade pip
 RUN pip install setuptools
-RUN pip install thumbor==6.6.0
+RUN pip install thumbor==6.7.0
 
 # Lock Pillow because of https://github.com/thumbor/thumbor/issues/1102
 RUN pip install Pillow==5.0.0
